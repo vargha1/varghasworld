@@ -218,6 +218,12 @@ const sections = [
     'Contact me<br/>Telegram: @Vargha11<br/>Email: vargha.rahavi@gmail.com'
 ];
 
+const sectionIds = [
+    "about",
+    "projects",
+    "contact",
+]
+
 sections.forEach((text, index) => {
     const section = document.createElement('div');
     section.style.height = `${100 + index * 35}vh`;
@@ -231,6 +237,9 @@ sections.forEach((text, index) => {
     section.style.top = `${index * 3}`;
     section.innerHTML = text;
     scrollContainer.appendChild(section);
+    if(index>0){
+        section.id = sectionIds[index-1]
+    }
 });
 
 window.addEventListener('resize', () => {
